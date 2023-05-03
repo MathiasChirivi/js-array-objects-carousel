@@ -1,0 +1,108 @@
+/*-------------------
+    SETTINGS
+-------------------*/
+
+:root {
+    --container-size: 50rem;
+}
+
+/*-------------------
+    RESET
+-------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*-------------------
+    GENERAL
+-------------------*/
+
+body{
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: var(--container-size);
+    width: 100%;
+}
+
+/*-------------------
+    CAROUSEL
+-------------------*/
+
+.carousel{
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.carouselMain{
+    position: relative;
+    flex-grow: 1;
+}
+
+.carouselItems {
+    height: 100%;
+}
+
+.carousel img, .item {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.item{
+    display: none;
+    position: relative;
+}
+
+.item.active{
+    display: block;
+}
+
+.carouselBtn {
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.125rem;
+  }
+  #carouselPrev {
+    top: 1.25rem;
+  }
+  #carouselNext {
+    bottom: 1.25rem;
+  }
+
+.cardText{
+    color: white;
+    width: 60%;
+    right: 0;
+    padding-right: 5px;
+    text-align: right;
+    position: absolute;
+    bottom: 50px;
+    
+}
+  
