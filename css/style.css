@@ -4,6 +4,7 @@
 
 :root {
     --container-size: 50rem;
+    --carousel-tumbs-number: 5;
 }
 
 /*-------------------
@@ -60,7 +61,19 @@ body{
     height: 100%;
 }
 
-.carousel img, .item {
+.thumbnails {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.thumbnails .imagthumb {
+    height: calc(100% / 5);
+    width: 100%;
+}
+
+.carousel img, .item , .imagthumb{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -96,9 +109,10 @@ body{
   }
 
 .cardText{
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     width: 60%;
-    right: 0;
+    right: 25%;
     padding-right: 5px;
     text-align: right;
     position: absolute;

@@ -26,9 +26,9 @@ const images = [
 ];
 console.log(images)
 
-const next = document.getElementById("carouselNext");
-const prev = document.getElementById("carouselPrev");
+
 const imagesScheda = document.querySelector(".carouselItems");
+const thumbnails = document.querySelector(".thumbnails")
 
 
 images.forEach((element) =>{
@@ -36,15 +36,24 @@ images.forEach((element) =>{
     `<div class="item">
         <img src = ./${element.image}>
     <div class="cardText">
-        <h2>${element.title}</h2>
-        <p>${element.text}</p>
-     </div>
+    <h2>${element.title}</h2>
+    <p>${element.text}</p>
+    </div>
     </div>`
+    
+    thumbnails.innerHTML += 
+    `<div class="imagthumb">
+    <img src=./${element.image}>
+    </div>`;
 })
+
+const next = document.getElementById("carouselNext");
+const prev = document.getElementById("carouselPrev");
 
 let itemsActive = 0;
 const active = document.getElementsByClassName("item");
 active[itemsActive].classList.add("active");
+
 
 /******************************************
                  FUNZIONI
@@ -60,7 +69,7 @@ active[itemsActive].classList.add("active");
     active[itemsActive].classList.add('active');
  })
 
- prev.addEventListener('click', function () {
+const indietro = prev.addEventListener('click', function () {
     active[itemsActive].classList.remove('active');
     if(itemsActive == 4){
         itemsActive = 0;
@@ -70,4 +79,6 @@ active[itemsActive].classList.add("active");
     }
     active[itemsActive].classList.add('active');
  })
+
+ console.log(indietro)
 
