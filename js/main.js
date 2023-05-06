@@ -54,22 +54,27 @@ let itemsActive = 0;
 const active = document.getElementsByClassName("item");
 active[itemsActive].classList.add("active");
 
+const thumbnailsActive = document.getElementsByClassName("imagthumb");
+thumbnailsActive[itemsActive].classList.add("selected");
+
 
 /******************************************
                  FUNZIONI
  *****************************************/
  next.addEventListener('click', function () {
-    active[itemsActive].classList.remove('active');
+     active[itemsActive].classList.remove('active');
+     thumbnailsActive[itemsActive].classList.remove('selected');
     if(itemsActive == 0){
         itemsActive = 4;
-    }
-    else{
+    }else{
         itemsActive--;
     }
+    thumbnailsActive[itemsActive].classList.add('selected');
     active[itemsActive].classList.add('active');
  })
 
 const indietro = prev.addEventListener('click', function () {
+    thumbnailsActive[itemsActive].classList.remove('selected');
     active[itemsActive].classList.remove('active');
     if(itemsActive == 4){
         itemsActive = 0;
@@ -77,6 +82,7 @@ const indietro = prev.addEventListener('click', function () {
     else{
         itemsActive++;
     }
+    thumbnailsActive[itemsActive].classList.add('selected');
     active[itemsActive].classList.add('active');
  })
 
